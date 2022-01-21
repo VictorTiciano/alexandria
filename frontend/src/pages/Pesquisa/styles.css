@@ -1,0 +1,13 @@
+.alexandria-pesquisa-container{
+    display: flex;
+    width: 100%;
+}
+
+.alexandria-pesquisa-barra{
+    width: 80%;
+}
+
+.alexandria-pesquisa-barra h1{
+    font-size: 24px;
+    margin: 20px 0 0 30px;
+}
