@@ -1,6 +1,6 @@
 import "./styles.css"
 
-function Livro() {
+function LivroPesquisa() {
     return (
         <div className="alexandria-livro-container">
             <div className="alexandria-livro-dados">
@@ -15,4 +15,4 @@ function Livro() {
     );
 }
 
-export default Livro;
+export default LivroPesquisa;

@@ -5,6 +5,7 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .alexandria-livro-dados{
@@ -12,18 +13,6 @@
 }
 .alexandria-livro-dados p{
     margin: 0;
-}
-
-.alexandria-livro-content{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.alexandria-livro-content p{
-    font-size: 14px;
-    margin: 0 0 0 10px;
 }
 
 .alexandria-livro-buttons{

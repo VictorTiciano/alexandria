@@ -1,5 +1,4 @@
-import BarraPesquisa from "../../components/BarraPesquisa";
-import Meio from "../../components/Meio";
+import FramePesquisa from "../../components/FramePesquisa";
 import MenuLeft from "../../components/MenuLeft";
 import Navbar from "../../components/Navbar";
 import "./styles.css"
@@ -12,13 +11,11 @@ function Pesquisa() {
                 <MenuLeft />
                 <div className="alexandria-pesquisa-barra">
                     <h1>Pesquisa geral</h1>
-                    <BarraPesquisa />
-                    <Meio/>
+                    <FramePesquisa/>
                 </div>
             </div>
 
         </>
-
     );
 }
 
