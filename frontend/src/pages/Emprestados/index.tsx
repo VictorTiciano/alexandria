@@ -1,6 +1,6 @@
+import EmprestadoResult from "../../components/ResultEmprestado";
 import MenuLeft from "../../components/MenuLeft";
 import Navbar from "../../components/Navbar";
-import PesquisaResult from "../../components/PesquisaResult";
 import "./styles.css"
 
 function Emprestados(){
@@ -11,7 +11,7 @@ function Emprestados(){
                 <MenuLeft />
                 <div className="alexandria-emprestados-content">
                     <h1>Livros emprestados</h1>
-                    <PesquisaResult/>
+                    <EmprestadoResult/>
                 </div>
             </div>
         </>

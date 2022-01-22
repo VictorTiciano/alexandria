@@ -1,14 +1,14 @@
-.alexandria-emprestados-container{
+.alexandria-reservados-container{
     display: flex;
     width: 100%;
 }
 
-.alexandria-emprestados-content {
+.alexandria-reservados-content {
     width: 80%;
 }
 
 
-.alexandria-emprestados-content h1{
+.alexandria-reservados-content h1{
     font-size: 24px;
     margin: 20px 0 0 30px;
 }

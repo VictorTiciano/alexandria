@@ -8,16 +8,13 @@ function Navbar() {
                 <div className="alexandria-nav-content">
                     <h1>Alexandria</h1>
                     <div className="alexandria-menu-content">
-                        <a href="telade informações" className="alexandria-menu-element">
+                        <a href="https://github.com/fernanddo-s/alexandria" target="_blank" rel="noreferrer noopener" className="alexandria-menu-element">
                             <p>Sobre</p>
                         </a>
-                        <a href="tela de livros" className="alexandria-menu-element">
+                        <a href="/" className="alexandria-menu-element">
                             <p>Livros</p>
                         </a>
-                        <a href="tela de login" className="alexandria-menu-element">
-                            <p>Login</p>
-                        </a>
-                        <a href="tela de login" className="alexandria-menu-element">
+                        <a href="/" className="alexandria-menu-element">
                             <p>Login</p>
                         </a>
                     </div>

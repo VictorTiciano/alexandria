@@ -14,10 +14,10 @@ function MenuLeft() {
                     <a href="/reservados">Reserva</a>
                 </li>
                 <li>
-                    <a href="/emprestados">Livros</a>
+                    <a href="/">Livros</a>
                 </li>
                 <li>
-                    <a href="/emprestados">Outra coisa</a>
+                    <a href="/">Pesquisa</a>
                 </li>
             </ul>
         </div>

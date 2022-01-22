@@ -1,5 +1,5 @@
 import BarraPesquisa from "../BarraPesquisa";
-import PesquisaResult from "../PesquisaResult";
+import PesquisaResult from "../ResultPesquisa";
 import "./styles.css"
 
 function FramePesquisa(){

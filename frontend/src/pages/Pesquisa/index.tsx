@@ -9,12 +9,11 @@ function Pesquisa() {
             <Navbar />
             <div className="alexandria-pesquisa-container">
                 <MenuLeft />
-                <div className="alexandria-pesquisa-barra">
+                <div className="alexandria-pesquisa-content">
                     <h1>Pesquisa geral</h1>
                     <FramePesquisa/>
                 </div>
             </div>
-
         </>
     );
 }
