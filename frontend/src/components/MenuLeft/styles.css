@@ -1,0 +1,34 @@
+.alexandria-menu-left{
+    align-items: center;
+    flex-direction: column;
+    max-width: 240px;
+    height: 600px;
+    padding: 15px;
+    background-color: #A7A2C3;
+
+}
+
+.alexandria-menu-left-elements{
+    padding: 0;
+    list-style-type: none;
+    font-size: 18px;
+    cursor: default;
+    width: 100%;
+    margin: 0 0 0 20px;
+    color: #fff;
+}
+
+.alexandria-menu-left-elements li {
+    margin: 20px 0 0px 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 100%;
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+    width: 154px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+}
