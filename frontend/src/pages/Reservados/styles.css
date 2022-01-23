@@ -1,13 +1,14 @@
-.alexandria-pesquisa-container{
+.alexandria-reservados-container{
     display: flex;
     width: 100%;
 }
 
-.alexandria-pesquisa-content{
+.alexandria-reservados-content {
     width: 80%;
 }
 
-.alexandria-pesquisa-content h1{
+
+.alexandria-reservados-content h1{
     font-size: 24px;
     margin: 20px 0 0 30px;
 }

@@ -1,0 +1,22 @@
+.alexandria-livro-reservado-container{
+    width: 100%;
+    height: 60px;
+    background-color: #D3B9B9;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.alexandria-livro-dados{
+    margin: 0 0 0 10px;
+}
+
+.alexandria-livro-dados p{
+    margin: 0;
+}
+
+.alexandria-livro-reservado-buttons{
+    margin: 0 10px 0 0;
+    display: flex;
+}

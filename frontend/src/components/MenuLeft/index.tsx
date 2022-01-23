@@ -1,21 +1,23 @@
 import "./styles.css"
+import { Link } from "react-router-dom";
 
-{/**Menu do lado esquerdo com opção de emprestimo, reserva e menu do usuario */ }
 function MenuLeft() {
     return (
         <div className="alexandria-menu-left">
             <ul className="alexandria-menu-left-elements">
                 <li>
+                <Link to={`emprestados/`}>
                     <a href="">Emprestimo</a>
+                </Link>
                 </li>
                 <li>
-                    <a href="">Reserva</a>
+                    <a href="/reservados">Reserva</a>
                 </li>
                 <li>
-                    <a href="">Livros</a>
+                    <a href="/">Livros</a>
                 </li>
                 <li>
-                    <a href="">Outra coisa</a>
+                    <a href="/">Pesquisa</a>
                 </li>
             </ul>
         </div>
