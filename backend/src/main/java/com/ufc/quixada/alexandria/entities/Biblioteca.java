@@ -17,7 +17,7 @@ public class Biblioteca {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Integer cnpj;
+	private String cnpj;
 	private String nome;
 	private String endereco;
 	
@@ -27,7 +27,7 @@ public class Biblioteca {
 	public Biblioteca() {
 	}
 
-	public Biblioteca(Long id, Integer cnpj, String nome, String endereco, List<Livro> livro) {
+	public Biblioteca(Long id, String cnpj, String nome, String endereco, List<Livro> livro) {
 		this.id = id;
 		this.cnpj = cnpj;
 		this.nome = nome;
@@ -43,11 +43,11 @@ public class Biblioteca {
 		this.id = id;
 	}
 
-	public Integer getCnpj() {
+	public String getCnpj() {
 		return cnpj;
 	}
 
-	public void setCnpj(Integer cnpj) {
+	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
 

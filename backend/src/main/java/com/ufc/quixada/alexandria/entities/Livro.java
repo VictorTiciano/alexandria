@@ -20,13 +20,13 @@ public class Livro {
 	private String titulo;
 	private String subtitulo;
 	private String autor;
-	private Integer isbn;
+	private String isbn;
 	private String assunto;
 	private Integer n_edicao;
 	private String editora;
-	private Date ano_publicacao;
+	private Integer ano_publicacao;
 	private Integer n_pagina;
-	private Integer quatidade;
+	private Integer quantidade;
 	
 	@ManyToOne
 	@JoinColumn(name = "biblioteca_id") 
@@ -38,8 +38,8 @@ public class Livro {
 
 	
 
-	public Livro(Long id, String titulo, String subtitulo, String autor, Integer isbn, String assunto, Integer n_edicao,
-			String editora, Date ano_publicacao, Integer n_pagina, Integer quatidade, Biblioteca biblioteca) {
+	public Livro(Long id, String titulo, String subtitulo, String autor, String isbn, String assunto, Integer n_edicao,
+			String editora, Integer ano_publicacao, Integer n_pagina, Integer quantidade, Biblioteca biblioteca) {
 		this.id = id;
 		this.titulo = titulo;
 		this.subtitulo = subtitulo;
@@ -50,7 +50,7 @@ public class Livro {
 		this.editora = editora;
 		this.ano_publicacao = ano_publicacao;
 		this.n_pagina = n_pagina;
-		this.quatidade = quatidade;
+		this.quantidade = quantidade;
 		this.biblioteca = biblioteca;
 	}
 
@@ -88,11 +88,11 @@ public class Livro {
 		this.autor = autor;
 	}
 
-	public Integer getIsbn() {
+	public String getIsbn() {
 		return isbn;
 	}
 
-	public void setIsbn(Integer isbn) {
+	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 
@@ -120,11 +120,11 @@ public class Livro {
 		this.editora = editora;
 	}
 
-	public Date getAno_publicacao() {
+	public Integer getAno_publicacao() {
 		return ano_publicacao;
 	}
 
-	public void setAno_publicacao(Date ano_publicacao) {
+	public void setAno_publicacao(Integer ano_publicacao) {
 		this.ano_publicacao = ano_publicacao;
 	}
 
@@ -137,11 +137,11 @@ public class Livro {
 	}
 
 	public Integer getQuatidade() {
-		return quatidade;
+		return quantidade;
 	}
 
 	public void setQuatidade(Integer quatidade) {
-		this.quatidade = quatidade;
+		this.quantidade = quatidade;
 	}
 
 	public Biblioteca getBiblioteca() {

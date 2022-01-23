@@ -16,7 +16,7 @@ public class Administrador {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
-	private Integer cpf;
+	private String cpf;
 	private String endereco;
 	private String email;
 	
@@ -27,7 +27,7 @@ public class Administrador {
 	public Administrador() {
 	}
 
-	public Administrador(Long id, String nome, Integer cpf, String endereco, String email, Biblioteca biblioteca) {
+	public Administrador(Long id, String nome, String cpf, String endereco, String email, Biblioteca biblioteca) {
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
@@ -52,11 +52,11 @@ public class Administrador {
 		this.nome = nome;
 	}
 
-	public Integer getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(Integer cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
