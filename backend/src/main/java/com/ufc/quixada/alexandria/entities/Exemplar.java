@@ -28,6 +28,7 @@ public class Exemplar {
 		this.livro = livro;
 	}
 
+
 	public Long getId() {
 		return id;
 	}
