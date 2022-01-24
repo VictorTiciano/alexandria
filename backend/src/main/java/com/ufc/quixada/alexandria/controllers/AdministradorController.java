@@ -31,4 +31,10 @@ public class AdministradorController {
 		return service.findById(id);
 	}
 	
+	@PostMapping(value = "/add")
+    public AdministradorDTO saveCliente(@RequestBody AdministradorDTO dto) {
+		AdministradorDTO administradorDTO = service.salvar(dto);
+		return administradorDTO;
+    }
+	
 }
