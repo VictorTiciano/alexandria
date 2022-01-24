@@ -1,10 +1,6 @@
 package com.ufc.quixada.alexandria.dto;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.ufc.quixada.alexandria.entities.Biblioteca;
-import com.ufc.quixada.alexandria.entities.Livro;
 
 public class BibliotecaDTO {
 

@@ -5,6 +5,7 @@ import com.ufc.quixada.alexandria.entities.Administrador;
 public class AdministradorDTO {
 
 	private Long id;
+	private Long biblioteca_id;
 	private String nome;
 	private String cpf;
 	private String endereco;
@@ -14,17 +15,25 @@ public class AdministradorDTO {
 	public AdministradorDTO() {
 	}
 
-	public AdministradorDTO(Long id, String nome, String cpf, String endereco, String email, BibliotecaDTO biblioteca) {
+	
+	
+	public AdministradorDTO(Long id, Long biblioteca_id, String nome, String cpf, String endereco, String email,
+			BibliotecaDTO biblioteca) {
+		super();
 		this.id = id;
+		this.biblioteca_id = biblioteca_id;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.endereco = endereco;
 		this.email = email;
 		this.biblioteca = biblioteca;
 	}
-	
+
+
+
 	public AdministradorDTO(Administrador administrador) {
 		id = administrador.getId();
+		biblioteca_id = administrador.getBiblioteca().getId();
 		nome = administrador.getNome();
 		cpf = administrador.getCpf();
 		endereco = administrador.getEndereco();
@@ -79,5 +88,13 @@ public class AdministradorDTO {
 	public void setBiblioteca(BibliotecaDTO biblioteca) {
 		this.biblioteca = biblioteca;
 	}
-	
+
+	public Long getBiblioteca_id() {
+		return biblioteca_id;
+	}
+
+	public void setBiblioteca_id(Long biblioteca_id) {
+		this.biblioteca_id = biblioteca_id;
+	}
+
 }

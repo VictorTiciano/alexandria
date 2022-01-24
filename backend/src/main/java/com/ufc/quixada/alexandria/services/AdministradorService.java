@@ -8,8 +8,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ufc.quixada.alexandria.dto.AdministradorDTO;
 import com.ufc.quixada.alexandria.dto.BibliotecaDTO;
+import com.ufc.quixada.alexandria.dto.ClienteDTO;
 import com.ufc.quixada.alexandria.entities.Administrador;
 import com.ufc.quixada.alexandria.entities.Biblioteca;
+import com.ufc.quixada.alexandria.entities.Cliente;
 import com.ufc.quixada.alexandria.repositories.AdministradorRepository;
 import com.ufc.quixada.alexandria.repositories.BibliotecaRepository;
 
@@ -18,6 +20,9 @@ public class AdministradorService {
 	
 	@Autowired
 	private AdministradorRepository repository;
+	
+	@Autowired
+	private BibliotecaRepository bibliotecaRepository;
 
 	@Transactional(readOnly = true)
 	public Page<AdministradorDTO> findAll(Pageable pageable) {
@@ -32,5 +37,22 @@ public class AdministradorService {
 		AdministradorDTO dto = new AdministradorDTO(result);
 		return dto;
 	}
+	
+	@Transactional(readOnly = true)
+	public AdministradorDTO salvar(AdministradorDTO dto) {
+		
+		Administrador administrador;
+		Biblioteca biblioteca = bibliotecaRepository.findById(dto.getBiblioteca_id()).get();
+        
+		administrador = new Administrador();
+		administrador.setNome(dto.getNome());
+		administrador.setCpf(dto.getCpf());
+		administrador.setEndereco(dto.getEndereco());
+		administrador.setEmail(dto.getEmail());
+		administrador.setBiblioteca(biblioteca);
+		administrador = repository.save(administrador);	
+ 
+        return new AdministradorDTO(administrador);
+    }
 	
 }
