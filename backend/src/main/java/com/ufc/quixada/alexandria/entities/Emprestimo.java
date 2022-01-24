@@ -1,5 +1,6 @@
 package com.ufc.quixada.alexandria.entities;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.EmbeddedId;
@@ -12,7 +13,7 @@ public class Emprestimo {
 	
 	@EmbeddedId
 	private EmprestimoPK id = new EmprestimoPK();
-	private Date data_dev;
+	private LocalDate data_dev;
 
 	public Emprestimo() {
 	}
@@ -33,11 +34,11 @@ public class Emprestimo {
 		this.id = id;
 	}
 
-	public Date getData_dev() {
+	public LocalDate getData_dev() {
 		return data_dev;
 	}
 
-	public void setData_dev(Date data_dev) {
+	public void setData_dev(LocalDate data_dev) {
 		this.data_dev = data_dev;
 	}
 

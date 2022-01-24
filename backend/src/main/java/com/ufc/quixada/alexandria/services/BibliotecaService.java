@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ufc.quixada.alexandria.dto.BibliotecaDTO;
+import com.ufc.quixada.alexandria.dto.ClienteDTO;
 import com.ufc.quixada.alexandria.entities.Biblioteca;
 import com.ufc.quixada.alexandria.repositories.BibliotecaRepository;
 
@@ -28,6 +29,20 @@ public class BibliotecaService {
 		Biblioteca result = repository.findById(id).get();
 		BibliotecaDTO dto = new BibliotecaDTO(result);
 		return dto;
+	}
+	
+	@Transactional(readOnly = true)
+	public BibliotecaDTO salvar(BibliotecaDTO dto) {
+		
+		Biblioteca biblioteca;
+		
+		biblioteca = new Biblioteca();
+		biblioteca.setCnpj(dto.getCnpj());
+		biblioteca.setNome(dto.getNome());
+		biblioteca.setEndereco(dto.getEndereco());
+		biblioteca = repository.save(biblioteca);
+		
+		return new BibliotecaDTO(biblioteca);
 	}
 	
 }

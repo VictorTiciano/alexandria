@@ -29,4 +29,20 @@ public class ClienteService {
 		ClienteDTO dto = new ClienteDTO(result);
 		return dto;
 	}
+	
+	@Transactional(readOnly = true)
+	public ClienteDTO salvar(ClienteDTO dto) {
+		
+        Cliente cliente;
+        
+        	cliente = new Cliente();
+        	cliente.setNome(dto.getNome());
+        	cliente.setCpf(dto.getCpf());
+        	cliente.setEndereco(dto.getEndereco());
+        	cliente.setEmail(dto.getEmail());
+        	cliente = repository.save(cliente);	
+ 
+        return new ClienteDTO(cliente);
+    }
+	
 }
