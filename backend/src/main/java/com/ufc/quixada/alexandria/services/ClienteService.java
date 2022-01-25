@@ -50,4 +50,22 @@ public class ClienteService {
 			repository.deleteById(id);
 	}
 	
+	@Transactional
+	public ClienteDTO atualizar(ClienteDTO dto, Long id) {
+		
+        Cliente cliente;
+
+        cliente = repository.findById(id).get();
+        System.out.println(cliente.toString());        
+    	cliente.setId(id);
+    	cliente.setNome(dto.getNome());
+    	cliente.setCpf(cliente.getCpf());
+    	cliente.setEndereco(dto.getEndereco());
+    	cliente.setEmail(cliente.getEmail());
+    	System.out.println(cliente.toString());
+    	cliente = repository.save(cliente);
+ 
+        return new ClienteDTO(cliente);
+    }
+	
 }
