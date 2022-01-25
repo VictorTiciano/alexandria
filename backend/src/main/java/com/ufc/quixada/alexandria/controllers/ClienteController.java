@@ -36,5 +36,11 @@ public class ClienteController {
 		ClienteDTO clienteDTO = service.salvar(dto);
 		return clienteDTO;
     }
+	
+	@DeleteMapping(value = "/{id}")
+	public void deletarCliente(@PathVariable Long id) {
+		service.deletar(id);
+		
+	}
 
 }

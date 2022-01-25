@@ -32,7 +32,7 @@ public class AdministradorController {
 	}
 	
 	@PostMapping(value = "/add")
-    public AdministradorDTO saveCliente(@RequestBody AdministradorDTO dto) {
+    public AdministradorDTO saveAdministrador(@RequestBody AdministradorDTO dto) {
 		AdministradorDTO administradorDTO = service.salvar(dto);
 		return administradorDTO;
     }
