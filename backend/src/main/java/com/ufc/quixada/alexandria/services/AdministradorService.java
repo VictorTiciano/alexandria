@@ -55,4 +55,9 @@ public class AdministradorService {
         return new AdministradorDTO(administrador);
     }
 	
+	@Transactional
+	public void deletar(Long id) {
+			repository.deleteById(id);
+	}
+	
 }

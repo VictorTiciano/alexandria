@@ -1,5 +1,7 @@
 package com.ufc.quixada.alexandria.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -7,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ufc.quixada.alexandria.dto.ClienteDTO;
-import com.ufc.quixada.alexandria.entities.Biblioteca;
+import com.ufc.quixada.alexandria.dto.ClienteUpdateForm;
 import com.ufc.quixada.alexandria.entities.Cliente;
 import com.ufc.quixada.alexandria.repositories.ClienteRepository;
 
@@ -46,9 +48,24 @@ public class ClienteService {
         return new ClienteDTO(cliente);
     }
 	
-	@Transactional(readOnly = true)
-	public void deletar(long id) {
+	@Transactional
+	public void deletar(Long id) {
 			repository.deleteById(id);
+	}
+	
+	@Transactional
+	public ClienteDTO updateById(ClienteUpdateForm form, Long id) {
+		Optional<Cliente> op = repository.findById(id);
+		if(op.isPresent()) {
+			Cliente obj = op.get();
+			if (form.getNome() != null) {
+				obj.setNome(form.getNome());
+				obj.setEndereco(form.getEndereco());
+			}
+			repository.save(obj);
+			return new ClienteDTO(obj);
+		}
+		return null;
 	}
 	
 }

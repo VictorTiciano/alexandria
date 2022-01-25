@@ -3,6 +3,7 @@ package com.ufc.quixada.alexandria.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,9 +33,14 @@ public class BibliotecaController {
 	}
 	
 	@PostMapping(value = "/add")
-    public BibliotecaDTO saveCliente(@RequestBody BibliotecaDTO dto) {
+    public BibliotecaDTO saveBiblioteca(@RequestBody BibliotecaDTO dto) {
 		BibliotecaDTO bibliotecaDTO = service.salvar(dto);
 		return bibliotecaDTO;
     }
+	
+	@DeleteMapping(value = "/{id}")
+	public void deletarBiblioteca(@PathVariable Long id) {
+		service.deletar(id);
+	}
 	
 }
