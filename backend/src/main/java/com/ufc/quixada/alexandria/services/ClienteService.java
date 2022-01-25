@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ufc.quixada.alexandria.dto.ClienteDTO;
+import com.ufc.quixada.alexandria.entities.Biblioteca;
 import com.ufc.quixada.alexandria.entities.Cliente;
 import com.ufc.quixada.alexandria.repositories.ClienteRepository;
 
@@ -44,5 +45,10 @@ public class ClienteService {
  
         return new ClienteDTO(cliente);
     }
+	
+	@Transactional(readOnly = true)
+	public void deletar(long id) {
+			repository.deleteById(id);
+	}
 	
 }

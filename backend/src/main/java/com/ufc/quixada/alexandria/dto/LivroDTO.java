@@ -5,6 +5,7 @@ import com.ufc.quixada.alexandria.entities.Livro;
 public class LivroDTO {
 
 	private Long id;
+	private Long biblioteca_id;
 	private String titulo;
 	private String subtitulo;
 	private String autor;
@@ -20,10 +21,12 @@ public class LivroDTO {
 	public LivroDTO() {
 	}
 	
-	public LivroDTO(Long id, String titulo, String subtitulo, String autor, String isbn, String assunto,
-			Integer n_edicao, String editora, Integer ano_publicacao, Integer n_pagina, Integer quantidade,
-			BibliotecaDTO biblioteca) {
+
+	public LivroDTO(Long id, Long biblioteca_id, String titulo, String subtitulo, String autor, String isbn,
+			String assunto, Integer n_edicao, String editora, Integer ano_publicacao, Integer n_pagina,
+			Integer quantidade, BibliotecaDTO biblioteca) {
 		this.id = id;
+		this.biblioteca_id = biblioteca_id;
 		this.titulo = titulo;
 		this.subtitulo = subtitulo;
 		this.autor = autor;
@@ -37,8 +40,10 @@ public class LivroDTO {
 		this.biblioteca = biblioteca;
 	}
 
+
 	public LivroDTO(Livro livro) {
 		id = livro.getId();
+		biblioteca_id = livro.getBiblioteca().getId();
 		titulo = livro.getTitulo();
 		subtitulo = livro.getSubtitulo();
 		autor = livro.getAutor();
@@ -52,100 +57,161 @@ public class LivroDTO {
 		biblioteca = new BibliotecaDTO(livro.getBiblioteca());
 	}
 
+
+
 	public Long getId() {
 		return id;
 	}
+
+
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+
+
+	public Long getBiblioteca_id() {
+		return biblioteca_id;
+	}
+
+
+
+	public void setBiblioteca_id(Long biblioteca_id) {
+		this.biblioteca_id = biblioteca_id;
+	}
+
+
+
 	public String getTitulo() {
 		return titulo;
 	}
+
+
 
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
 
+
+
 	public String getSubtitulo() {
 		return subtitulo;
 	}
+
+
 
 	public void setSubtitulo(String subtitulo) {
 		this.subtitulo = subtitulo;
 	}
 
+
+
 	public String getAutor() {
 		return autor;
 	}
+
+
 
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
 
+
+
 	public String getIsbn() {
 		return isbn;
 	}
+
+
 
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 
+
+
 	public String getAssunto() {
 		return assunto;
 	}
+
+
 
 	public void setAssunto(String assunto) {
 		this.assunto = assunto;
 	}
 
+
+
 	public Integer getN_edicao() {
 		return n_edicao;
 	}
+
+
 
 	public void setN_edicao(Integer n_edicao) {
 		this.n_edicao = n_edicao;
 	}
 
+
+
 	public String getEditora() {
 		return editora;
 	}
+
+
 
 	public void setEditora(String editora) {
 		this.editora = editora;
 	}
 
+
+
 	public Integer getAno_publicacao() {
 		return ano_publicacao;
 	}
+
+
 
 	public void setAno_publicacao(Integer ano_publicacao) {
 		this.ano_publicacao = ano_publicacao;
 	}
 
+
+
 	public Integer getN_pagina() {
 		return n_pagina;
 	}
+
+
 
 	public void setN_pagina(Integer n_pagina) {
 		this.n_pagina = n_pagina;
 	}
 
+
+
 	public Integer getQuantidade() {
 		return quantidade;
 	}
+
+
 
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
 	}
 
+
+
 	public BibliotecaDTO getBiblioteca() {
 		return biblioteca;
 	}
 
+
+
 	public void setBiblioteca(BibliotecaDTO biblioteca) {
 		this.biblioteca = biblioteca;
 	}
+
 	
 }

@@ -19,7 +19,6 @@ public class AdministradorDTO {
 	
 	public AdministradorDTO(Long id, Long biblioteca_id, String nome, String cpf, String endereco, String email,
 			BibliotecaDTO biblioteca) {
-		super();
 		this.id = id;
 		this.biblioteca_id = biblioteca_id;
 		this.nome = nome;
