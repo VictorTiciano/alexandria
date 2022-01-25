@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +35,12 @@ public class LivroController {
 	@PostMapping(value = "/add")
     public LivroDTO saveLivro(@RequestBody LivroDTO dto) {
 		LivroDTO livroDTO = service.salvar(dto);
+		return livroDTO;
+    }
+	
+	@PutMapping(value = "/atualizar")
+    public LivroDTO updateLivro(@RequestBody LivroDTO dto) {
+		LivroDTO livroDTO = service.atualizar(dto);
 		return livroDTO;
     }
 	

@@ -59,5 +59,28 @@ public class LivroService {
 		
 		return new LivroDTO(livro);
     }
+	
+	@Transactional(readOnly = true)
+	public LivroDTO atualizar(LivroDTO dto) {
+		
+		Livro livro;
+		Biblioteca biblioteca = bibliotecaRepository.findById(dto.getBiblioteca_id()).get();
+        
+		livro = new Livro();
+		livro.setTitulo(dto.getTitulo());
+		livro.setSubtitulo(dto.getSubtitulo());
+		livro.setAutor(dto.getAutor());
+		livro.setIsbn(dto.getIsbn());
+		livro.setAssunto(dto.getAssunto());
+		livro.setN_edicao(dto.getN_edicao());
+		livro.setEditora(dto.getEditora());
+		livro.setAno_publicacao(dto.getAno_publicacao());
+		livro.setN_pagina(dto.getN_pagina());
+		livro.setQuatidade(dto.getQuantidade());
+		livro.setBiblioteca(biblioteca);
+		livro = repository.save(livro);	
+		
+		return new LivroDTO(livro);
+    }
 
 }
