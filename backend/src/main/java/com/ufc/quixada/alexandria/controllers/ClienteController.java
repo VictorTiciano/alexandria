@@ -7,13 +7,11 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ufc.quixada.alexandria.dto.ClienteDTO;
-import com.ufc.quixada.alexandria.dto.ClienteUpdateForm;
 import com.ufc.quixada.alexandria.services.ClienteService;
 
 @RestController
@@ -42,11 +40,6 @@ public class ClienteController {
 	@DeleteMapping(value = "/{id}")
 	public void deletarCliente(@PathVariable Long id) {
 		service.deletar(id);
-	}
-	
-	@PutMapping(value = "/{id}")
-	public ClienteDTO updateById(@RequestBody ClienteUpdateForm form, @PathVariable Long id){
-		return service.updateById(form, id);
 	}
 
 }

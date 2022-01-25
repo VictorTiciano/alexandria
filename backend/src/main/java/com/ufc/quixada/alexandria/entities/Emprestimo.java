@@ -1,7 +1,6 @@
 package com.ufc.quixada.alexandria.entities;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;

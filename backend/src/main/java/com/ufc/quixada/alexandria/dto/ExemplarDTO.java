@@ -1,7 +1,6 @@
 package com.ufc.quixada.alexandria.dto;
 
 import com.ufc.quixada.alexandria.entities.Exemplar;
-import com.ufc.quixada.alexandria.entities.Livro;
 
 public class ExemplarDTO {
 
