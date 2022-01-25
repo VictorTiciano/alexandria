@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ufc.quixada.alexandria.dto.ClienteDTO;
-import com.ufc.quixada.alexandria.entities.Biblioteca;
 import com.ufc.quixada.alexandria.entities.Cliente;
 import com.ufc.quixada.alexandria.repositories.ClienteRepository;
 

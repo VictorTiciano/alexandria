@@ -7,11 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ufc.quixada.alexandria.dto.AdministradorDTO;
-import com.ufc.quixada.alexandria.dto.BibliotecaDTO;
-import com.ufc.quixada.alexandria.dto.ClienteDTO;
 import com.ufc.quixada.alexandria.entities.Administrador;
 import com.ufc.quixada.alexandria.entities.Biblioteca;
-import com.ufc.quixada.alexandria.entities.Cliente;
 import com.ufc.quixada.alexandria.repositories.AdministradorRepository;
 import com.ufc.quixada.alexandria.repositories.BibliotecaRepository;
 
@@ -54,5 +51,10 @@ public class AdministradorService {
  
         return new AdministradorDTO(administrador);
     }
+	
+	@Transactional
+	public void deletar(Long id) {
+			repository.deleteById(id);
+	}
 	
 }
