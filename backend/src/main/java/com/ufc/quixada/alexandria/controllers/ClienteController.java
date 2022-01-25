@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ufc.quixada.alexandria.dto.ClienteDTO;
-import com.ufc.quixada.alexandria.entities.Cliente;
 import com.ufc.quixada.alexandria.services.ClienteService;
 
 @RestController
