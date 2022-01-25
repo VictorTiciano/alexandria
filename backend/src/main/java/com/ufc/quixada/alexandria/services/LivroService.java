@@ -6,9 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ufc.quixada.alexandria.dto.AdministradorDTO;
 import com.ufc.quixada.alexandria.dto.LivroDTO;
-import com.ufc.quixada.alexandria.entities.Administrador;
 import com.ufc.quixada.alexandria.entities.Biblioteca;
 import com.ufc.quixada.alexandria.entities.Livro;
 import com.ufc.quixada.alexandria.repositories.BibliotecaRepository;
