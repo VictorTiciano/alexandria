@@ -6,8 +6,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ufc.quixada.alexandria.dto.ClienteDTO;
 import com.ufc.quixada.alexandria.dto.LivroDTO;
 import com.ufc.quixada.alexandria.entities.Biblioteca;
+import com.ufc.quixada.alexandria.entities.Cliente;
 import com.ufc.quixada.alexandria.entities.Livro;
 import com.ufc.quixada.alexandria.repositories.BibliotecaRepository;
 import com.ufc.quixada.alexandria.repositories.LivroRepository;
@@ -58,13 +60,13 @@ public class LivroService {
 		return new LivroDTO(livro);
     }
 	
-	@Transactional(readOnly = true)
-	public LivroDTO atualizar(LivroDTO dto) {
+	@Transactional
+	public LivroDTO atualizar(LivroDTO dto, Long id) {
 		
 		Livro livro;
-		Biblioteca biblioteca = bibliotecaRepository.findById(dto.getBiblioteca_id()).get();
         
-		livro = new Livro();
+		livro = repository.findById(id).get();
+		
 		livro.setTitulo(dto.getTitulo());
 		livro.setSubtitulo(dto.getSubtitulo());
 		livro.setAutor(dto.getAutor());
@@ -75,10 +77,13 @@ public class LivroService {
 		livro.setAno_publicacao(dto.getAno_publicacao());
 		livro.setN_pagina(dto.getN_pagina());
 		livro.setQuatidade(dto.getQuantidade());
-		livro.setBiblioteca(biblioteca);
 		livro = repository.save(livro);	
 		
 		return new LivroDTO(livro);
     }
-
+	
+	@Transactional
+	public void deletar(Long id) {
+			repository.deleteById(id);
+	}
 }
