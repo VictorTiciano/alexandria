@@ -3,6 +3,7 @@ package com.ufc.quixada.alexandria.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -52,10 +53,9 @@ public class ClienteService {
 	
 	@Transactional
 	public ClienteDTO atualizar(ClienteDTO dto, Long id) {
-		
-        Cliente cliente;
 
-        cliente = repository.findById(id).get();       
+        Cliente cliente;
+		cliente = repository.findById(id).get();       
     	cliente.setId(id);
     	cliente.setNome(dto.getNome());
     	cliente.setEndereco(dto.getEndereco());
