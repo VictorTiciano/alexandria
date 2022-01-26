@@ -12,6 +12,8 @@ public class BibliotecaDTO {
 	public BibliotecaDTO(){
 	}
 
+	
+
 	public BibliotecaDTO(Long id, String cnpj, String nome, String endereco) {
 		this.id = id;
 		this.cnpj = cnpj;

@@ -49,4 +49,17 @@ public class BibliotecaService {
 			repository.deleteById(id);
 	}
 	
+	@Transactional
+	public BibliotecaDTO atualizar(BibliotecaDTO dto, Long id) {
+		
+		Biblioteca biblioteca;
+		
+		biblioteca = repository.findById(id).get();
+		biblioteca.setNome(dto.getNome());
+		biblioteca.setEndereco(dto.getEndereco());
+		biblioteca = repository.save(biblioteca);
+		
+		return new BibliotecaDTO(biblioteca);
+	}
+	
 }
