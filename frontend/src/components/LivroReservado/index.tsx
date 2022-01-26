@@ -1,10 +1,17 @@
 import "./styles.css"
 
 function LivroReservado(){
+
+    const livro = {
+        id: 1,
+        titulo: "Harry Potter e o Enigma da Fênix",
+        autor: "J.K. Rowling",
+        editora: "Editora Teste"
+    }
     return(
         <div className="alexandria-livro-reservado-container">
             <div className="alexandria-livro-dados">
-                <p>Administração do windows server 2008 R2 : server core / 2011 -  (Livros)
+                <p>{livro.titulo}, { livro.autor}, { livro.editora}
                 </p>
             </div>
             <div className="alexandria-livro-reservado-buttons">
