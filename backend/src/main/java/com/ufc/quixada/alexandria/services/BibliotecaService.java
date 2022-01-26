@@ -44,7 +44,7 @@ public class BibliotecaService {
 		return new BibliotecaDTO(biblioteca);
 	}
 	
-	@Transactional
+	@Transactional()
 	public void deletar(Long id) {
 			repository.deleteById(id);
 	}
