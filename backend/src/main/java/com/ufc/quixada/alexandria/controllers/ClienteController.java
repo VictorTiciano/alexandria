@@ -33,10 +33,10 @@ public class ClienteController {
 	}
 	
 	@PostMapping(value = "/add")
-    public ClienteDTO saveCliente(@RequestBody ClienteDTO dto) {
+    	public ClienteDTO saveCliente(@RequestBody ClienteDTO dto) {
 		ClienteDTO clienteDTO = service.salvar(dto);
 		return clienteDTO;
-    }
+    	}
 	
 	@DeleteMapping(value = "/{id}")
 	public void deletarCliente(@PathVariable Long id) {
@@ -44,9 +44,14 @@ public class ClienteController {
 	}
 	
 	@PutMapping(value = "/{id}")
-	public ClienteDTO atualizarCliente( @RequestBody ClienteDTO dto, @PathVariable Long id) {
-		ClienteDTO cliente = service.atualizar(dto, id);
-		return cliente;
+	public ResponseEntity<Object> atualizarCliente( @RequestBody ClienteDTO dto, @PathVariable Long id) {
+		boolean existsCliente = repository.existsById(id);
+		
+		if(existsCliente) {
+			service.atualizar(dto, id);
+			return ResponseEntity.ok("Cliente atualizado com sucesso");
+		}
+		
+		return ResponseEntity.notFound().build();
 	}
-
 }
