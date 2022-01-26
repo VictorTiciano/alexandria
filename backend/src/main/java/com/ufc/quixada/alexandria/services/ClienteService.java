@@ -55,6 +55,7 @@ public class ClienteService {
 	public ClienteDTO atualizar(ClienteDTO dto, Long id) {
 
         Cliente cliente;
+        
 		cliente = repository.findById(id).get();       
     	cliente.setId(id);
     	cliente.setNome(dto.getNome());
