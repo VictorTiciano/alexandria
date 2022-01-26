@@ -6,4 +6,6 @@ import com.ufc.quixada.alexandria.entities.Biblioteca;
 
 public interface BibliotecaRepository extends JpaRepository<Biblioteca, Long> {
 
+	boolean existsByCnpj(String cnpj);
+	
 }

@@ -57,4 +57,17 @@ public class AdministradorService {
 			repository.deleteById(id);
 	}
 	
+	@Transactional
+	public AdministradorDTO atualizar(AdministradorDTO dto, Long id) {
+		
+        Administrador administrador;
+        
+        administrador = repository.findById(id).get();  
+        administrador.setNome(dto.getNome());
+		administrador.setEndereco(dto.getEndereco());
+    	administrador = repository.save(administrador);
+ 
+        return new AdministradorDTO(administrador);
+    }
+	
 }
