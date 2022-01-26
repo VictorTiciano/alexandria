@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -59,43 +60,46 @@ public class BibliotecaController {
 		boolean existsCnpj = repository.existsByCnpj(dto.getCnpj());
 		
 		if(existsCnpj) {
-			return ResponseEntity.badRequest().body("Biblioteca já está cadastrado");
+			return ResponseEntity.badRequest().body("Biblioteca já está cadastrada");
 		}
 		service.salvar(dto);
-		return ResponseEntity.created(null).body("Biblioteca cadastrado com sucesso.");
+		return ResponseEntity.created(null).body("Biblioteca cadastrada com sucesso.") ;
     }
 	
+	@Transactional
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Object> deletar(@PathVariable Long id) {
 		
 		boolean existsBiblioteca = repository.existsById(id);
 		
 		if(existsBiblioteca) {
-			/*
-			 * se ela existe verificar se a lista de livros está vazia
-			 * verificar se algum administrador tem o id da biblioteca
-			 * */
 			Biblioteca biblioteca = repository.findById(id).get();
-			System.out.println(biblioteca.getCnpj());
-			System.out.println(biblioteca.getNome());
-			System.out.println(biblioteca.getEndereco());
-			System.out.println(biblioteca.getLivro().size());
+			AdministradorDTO administrador = administradorService.findById(id);
 			
-			System.out.println(biblioteca.getLivro().isEmpty());
-			if(!biblioteca.getLivro().isEmpty()) {
-				return ResponseEntity.badRequest().body("Biblioteca possui livros vinculados a ela");
+			if(biblioteca.getId() == administrador.getBiblioteca_id()) {
+				return ResponseEntity.badRequest().body("Existe um administrador cadastrado na biblioteca");
 			}
-			
+			if(!(biblioteca.getLivro().isEmpty())) {
+				
+				return ResponseEntity.badRequest().body("Existe um ou mais livros cadastrados na biblioteca");
+	            
+			}
 			service.deletar(id);
-            return ResponseEntity.ok("Cliente deletado com sucesso");
+			return ResponseEntity.ok("Biblioteca deletada com sucesso");
         }
-        return ResponseEntity.notFound().build();
+		return ResponseEntity.notFound().build();
 	}
 	
 	@PutMapping(value = "/{id}")
-	public BibliotecaDTO atualizarBiblioteca( @RequestBody BibliotecaDTO dto, @PathVariable Long id) {
-		BibliotecaDTO biblioteca = service.atualizar(dto, id);
-		return biblioteca;
+	public ResponseEntity<Object> atualizarBiblioteca( @RequestBody BibliotecaDTO dto, @PathVariable Long id) {
+		boolean existsBiblioteca = repository.existsById(id);
+		
+		if(existsBiblioteca) {
+			service.atualizar(dto, id);
+			return ResponseEntity.ok("Biblioteca atualizada com sucesso");
+		}
+		
+		return ResponseEntity.notFound().build();
 	}
 	
 }
