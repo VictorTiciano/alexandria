@@ -70,13 +70,6 @@ public class LivroController {
 	
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Object> deletarCliente(@PathVariable Long id) {
-		/*boolean existsLivro = respository.existsById(id);
-		
-		if(existsLivro) {
-			service.deletar(id);
-		}
-		return ResponseEntity.notFound().build();*/
-		
 		boolean existsLivro = respository.existsById(id);
 		if(existsLivro) {
 			service.deletar(id);
