@@ -62,7 +62,7 @@ public class BibliotecaController {
 			return ResponseEntity.badRequest().body("Biblioteca já está cadastrado");
 		}
 		service.salvar(dto);
-		return ResponseEntity.created(null).body("Biblioteca cadastrado com sucesso.") ;
+		return ResponseEntity.created(null).body("Biblioteca cadastrado com sucesso.");
     }
 	
 	@DeleteMapping(value = "/{id}")
@@ -71,13 +71,21 @@ public class BibliotecaController {
 		boolean existsBiblioteca = repository.existsById(id);
 		
 		if(existsBiblioteca) {
+			/*
+			 * se ela existe verificar se a lista de livros está vazia
+			 * verificar se algum administrador tem o id da biblioteca
+			 * */
 			Biblioteca biblioteca = repository.findById(id).get();
-			AdministradorDTO administrador = administradorService.findById(id);
-			if(biblioteca.getId() == administrador.getBiblioteca_id()) {
-				return ResponseEntity.badRequest().body("Erro 1");
+			System.out.println(biblioteca.getCnpj());
+			System.out.println(biblioteca.getNome());
+			System.out.println(biblioteca.getEndereco());
+			System.out.println(biblioteca.getLivro().size());
+			
+			System.out.println(biblioteca.getLivro().isEmpty());
+			if(!biblioteca.getLivro().isEmpty()) {
+				return ResponseEntity.badRequest().body("Biblioteca possui livros vinculados a ela");
 			}
-			if(true) {
-			}
+			
 			service.deletar(id);
             return ResponseEntity.ok("Cliente deletado com sucesso");
         }
