@@ -23,14 +23,14 @@ public class BibliotecaService {
 		return page;
 	}
 	
-	@Transactional(readOnly = true)
+	@Transactional
 	public BibliotecaDTO findById(Long id) {
 		Biblioteca result = repository.findById(id).get();
 		BibliotecaDTO dto = new BibliotecaDTO(result);
 		return dto;
 	}
 	
-	@Transactional(readOnly = true)
+	@Transactional
 	public BibliotecaDTO salvar(BibliotecaDTO dto) {
 		
 		Biblioteca biblioteca;

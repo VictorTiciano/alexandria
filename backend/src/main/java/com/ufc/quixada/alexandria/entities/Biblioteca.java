@@ -23,16 +23,22 @@ public class Biblioteca {
 	
 	@OneToMany(mappedBy = "biblioteca")
 	private List<Livro> livro = new ArrayList<>(); 
+	
+	@OneToMany(mappedBy = "biblioteca")
+	private List<Administrador> administrador = new ArrayList<>();
 
 	public Biblioteca() {
 	}
 
-	public Biblioteca(Long id, String cnpj, String nome, String endereco, List<Livro> livro) {
+	public Biblioteca(Long id, String cnpj, String nome, String endereco, List<Livro> livro,
+			List<Administrador> administrador) {
+		super();
 		this.id = id;
 		this.cnpj = cnpj;
 		this.nome = nome;
 		this.endereco = endereco;
 		this.livro = livro;
+		this.administrador = administrador;
 	}
 
 	public Long getId() {
@@ -73,6 +79,14 @@ public class Biblioteca {
 
 	public void setLivro(List<Livro> livro) {
 		this.livro = livro;
+	}
+
+	public List<Administrador> getAdministrador() {
+		return administrador;
+	}
+
+	public void setAdministrador(List<Administrador> administrador) {
+		this.administrador = administrador;
 	}
 	
 }

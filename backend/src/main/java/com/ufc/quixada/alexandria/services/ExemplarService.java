@@ -35,7 +35,7 @@ public class ExemplarService {
 		return dto;
 	}
 	
-	@Transactional(readOnly = true)
+	@Transactional
 	public ExemplarDTO salvar(ExemplarDTO dto) {
 		
 		Exemplar exemplar;

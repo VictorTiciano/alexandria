@@ -35,7 +35,7 @@ public class AdministradorService {
 		return dto;
 	}
 	
-	@Transactional(readOnly = true)
+	@Transactional
 	public AdministradorDTO salvar(AdministradorDTO dto) {
 		
 		Administrador administrador;

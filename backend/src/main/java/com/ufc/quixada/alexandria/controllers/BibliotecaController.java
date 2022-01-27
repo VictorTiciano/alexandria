@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.HttpClientErrorException.NotFound;
 
 import com.ufc.quixada.alexandria.dto.AdministradorDTO;
 import com.ufc.quixada.alexandria.dto.BibliotecaDTO;
@@ -74,9 +75,8 @@ public class BibliotecaController {
 		
 		if(existsBiblioteca) {
 			Biblioteca biblioteca = repository.findById(id).get();
-			AdministradorDTO administrador = administradorService.findById(id);
-			
-			if(biblioteca.getId() == administrador.getBiblioteca_id()) {
+	
+			if(!(biblioteca.getAdministrador().isEmpty())) {
 				return ResponseEntity.badRequest().body("Existe um administrador cadastrado na biblioteca");
 			}
 			if(!(biblioteca.getLivro().isEmpty())) {

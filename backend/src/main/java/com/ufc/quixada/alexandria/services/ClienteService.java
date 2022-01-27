@@ -31,7 +31,7 @@ public class ClienteService {
 		return dto;
 	}
 	
-	@Transactional(readOnly = true)
+	@Transactional
 	public ClienteDTO salvar(ClienteDTO dto) {
 		
         Cliente cliente;

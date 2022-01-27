@@ -37,7 +37,7 @@ public class LivroService {
 		return dto;
 	}
 	
-	@Transactional(readOnly = true)
+	@Transactional
 	public LivroDTO salvar(LivroDTO dto) {
 		
 		Livro livro;
