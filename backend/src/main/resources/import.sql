@@ -18,10 +18,10 @@ INSERT INTO tb_exemplar(livro_id) VALUES (2);
 INSERT INTO tb_cliente(nome, cpf, endereco, email) VALUES ('Maria Clara', 03758246571, 'Vila Bailarina, 254 - Mor Nova', 'clara@gmail.com');
 INSERT INTO tb_cliente(nome, cpf, endereco, email) VALUES ('Maria Clara2', 03758246572, 'Vila Bailarina2, 254 - Mor Nova2', 'clara2@gmail.com');
 
-INSERT INTO tb_emprestimo(data_dev, cliente_id, exemplar_id) VALUES ('2022-02-23', 1, 1); 
-INSERT INTO tb_emprestimo(data_dev, cliente_id, exemplar_id) VALUES ('2022-02-23', 2, 2);
-INSERT INTO tb_emprestimo(data_dev, cliente_id, exemplar_id) VALUES ('2022-02-23', 1, 3);
-INSERT INTO tb_emprestimo(data_dev, cliente_id, exemplar_id) VALUES ('2022-02-23', 2, 7);
+INSERT INTO tb_emprestimo(cliente_id, exemplar_id,data_Emprestimo,data_Devolucao) VALUES (1,2,'2022-01-23','2022-02-23'); 
+INSERT INTO tb_emprestimo(cliente_id, exemplar_id,data_Emprestimo,data_Devolucao) VALUES (2,3,'2022-01-23','2022-02-23'); 
+INSERT INTO tb_emprestimo(cliente_id, exemplar_id,data_Emprestimo,data_Devolucao) VALUES (1,7,'2022-01-23','2022-02-23'); 
+INSERT INTO tb_emprestimo(cliente_id, exemplar_id,data_Emprestimo,data_Devolucao) VALUES (2,1,'2022-01-23','2022-02-23'); 
 
 INSERT INTO tb_reserva(data_reserva, cliente_id, exemplar_id) VALUES ('2022-02-24', 1, 1);
 INSERT INTO tb_reserva(data_reserva, cliente_id, exemplar_id) VALUES ('2022-02-24', 1, 2);

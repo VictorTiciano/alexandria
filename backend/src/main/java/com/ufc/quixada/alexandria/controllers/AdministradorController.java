@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ufc.quixada.alexandria.dto.AdministradorDTO;
-import com.ufc.quixada.alexandria.dto.ClienteDTO;
 import com.ufc.quixada.alexandria.repositories.AdministradorRepository;
-import com.ufc.quixada.alexandria.repositories.ClienteRepository;
 import com.ufc.quixada.alexandria.services.AdministradorService;
 
 @RestController
