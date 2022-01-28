@@ -1,0 +1,14 @@
+.alexandria-biblioteca-container{
+    display: flex;
+    width: 100%;
+}
+
+.alexandria-biblioteca-content {
+    width: 80%;
+}
+
+
+.alexandria-biblioteca-content h1{
+    font-size: 24px;
+    margin: 20px 0 0 30px;
+}

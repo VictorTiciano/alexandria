@@ -1,3 +1,4 @@
+import Biblioteca from "pages/Biblioteca";
 import {
   BrowserRouter,
   Routes,
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Pesquisa />} />
         <Route path="/emprestados" element={<Emprestados />} />
         <Route path="/reservados" element={<Reservados />} />
+        <Route path="/bibliotecas" element={<Biblioteca />} />
       </Routes>
     </BrowserRouter>
   );

@@ -11,12 +11,12 @@ export type Livro = {
     ano_publicacao: number,
     n_pagina: number,
     quantidade: number,
-        biblioteca: {
-            id: number,
-            cnpj: string,
-            nome: string,
-            endereco: string
-        }
+    biblioteca: {
+        id: number,
+        cnpj: string,
+        nome: string,
+        endereco: string
+    }
 }
 
 export type LivroPage = {

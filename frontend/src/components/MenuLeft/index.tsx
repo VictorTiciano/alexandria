@@ -14,6 +14,9 @@ function MenuLeft() {
                     <a href="/reservados">Reserva</a>
                 </li>
                 <li>
+                    <a href="/bibliotecas">Biblioteca</a>
+                </li>
+                <li>
                     <a href="/">Livros</a>
                 </li>
                 <li>
