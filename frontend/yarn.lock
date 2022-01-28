@@ -1732,15 +1732,10 @@
   "resolved" "https://registry.npmjs.org/@types/mime/-/mime-1.3.2.tgz"
   "version" "1.3.2"
 
-"@types/node@*":
-  "integrity" "sha512-S/3xB4KzyFxYGCppyDt68yzBU9ysL88lSdIah4D6cptdcltc4NCPCAMc0+PCpg/lLIyC7IPvj2Z52OJWeIUkog=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-17.0.10.tgz"
-  "version" "17.0.10"
-
-"@types/node@^16.7.13":
-  "integrity" "sha512-Pf8M1XD9i1ksZEcCP8vuSNwooJ/bZapNmIzpmsMaL+jMI+8mEYU3PKvs+xDNuQcJWF/x24WzY4qxLtB0zNow9A=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-16.11.21.tgz"
-  "version" "16.11.21"
+"@types/node@*", "@types/node@^17.0.12":
+  "integrity" "sha512-4YpbAsnJXWYK/fpTVFlMIcUIho2AYCi4wg5aNPrG1ng7fn/1/RZfCIpRCiBX+12RVa34RluilnvCqD+g3KiSiA=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-17.0.12.tgz"
+  "version" "17.0.12"
 
 "@types/parse-json@^4.0.0":
   "integrity" "sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA=="

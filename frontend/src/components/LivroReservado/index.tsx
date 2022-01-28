@@ -1,13 +1,26 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Cliente } from "types/cliente";
+import { Livro } from "types/livro";
+import { BASE_URL } from "utils/request";
 import "./styles.css"
 
-function LivroReservado(){
+type Props = {
+    livro: Livro
+}
 
-    const livro = {
-        id: 1,
-        titulo: "Harry Potter e o Enigma da Fênix",
-        autor: "J.K. Rowling",
-        editora: "Editora Teste"
-    }
+function LivroReservado({livro}:Props){
+    
+    const [livro1, setLivro] = useState<Livro>();
+
+    useEffect(() => {
+        axios.get(`${BASE_URL}/livros/${livro.id}`)
+        .then(response => {
+            setLivro(response.data)
+        })
+    })
+
+
     return(
         <div className="alexandria-livro-reservado-container">
             <div className="alexandria-livro-dados">
