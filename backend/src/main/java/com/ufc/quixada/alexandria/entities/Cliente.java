@@ -1,9 +1,13 @@
 package com.ufc.quixada.alexandria.entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +21,9 @@ public class Cliente {
 	private String cpf;
 	private String endereco;
 	private String email;
+	
+	@OneToMany(mappedBy = "id.cliente")
+	private Set<Emprestimo> emprestimos = new HashSet<>();
 	
 	public Cliente() {
 		
@@ -71,10 +78,8 @@ public class Cliente {
 		this.email = email;
 	}
 
-	@Override
-	public String toString() {
-		return "Cliente [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", endereco=" + endereco + ", email=" + email
-				+ "]";
+	public Set<Emprestimo> getEmprestimos() {
+		return emprestimos;
 	}
 	
 }

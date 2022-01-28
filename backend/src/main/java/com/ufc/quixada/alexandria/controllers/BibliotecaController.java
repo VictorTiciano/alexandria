@@ -1,5 +1,7 @@
 package com.ufc.quixada.alexandria.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,13 +15,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.HttpClientErrorException.NotFound;
 
-import com.ufc.quixada.alexandria.dto.AdministradorDTO;
 import com.ufc.quixada.alexandria.dto.BibliotecaDTO;
+import com.ufc.quixada.alexandria.dto.LivroDTO;
 import com.ufc.quixada.alexandria.entities.Biblioteca;
 import com.ufc.quixada.alexandria.repositories.BibliotecaRepository;
-import com.ufc.quixada.alexandria.services.AdministradorService;
 import com.ufc.quixada.alexandria.services.BibliotecaService;
 
 
@@ -32,9 +32,6 @@ public class BibliotecaController {
 	
 	@Autowired
 	private BibliotecaRepository repository;
-	
-	@Autowired
-	private AdministradorService administradorService;
 	
 	@GetMapping
 	public Page<BibliotecaDTO> findAll(Pageable pageable){
@@ -100,6 +97,11 @@ public class BibliotecaController {
 		}
 		
 		return ResponseEntity.notFound().build();
+	}
+	
+	@GetMapping(value = "/livros/{id}")
+	public List<LivroDTO> listarLivros(@PathVariable Long id){
+		return service.findAllLivros(id);
 	}
 	
 }

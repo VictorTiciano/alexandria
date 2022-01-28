@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,17 +14,18 @@ public class Emprestimo {
 	
 	@EmbeddedId
 	private EmprestimoPK id = new EmprestimoPK();
-	private LocalDate data_dev;
+	private LocalDate dataEmprestimo;
+	private LocalDate dataDevolucao;
 
 	public Emprestimo() {
 	}
 	
-	public void setExemplar(Exemplar exemplar) {
-		id.setExemplar(exemplar);
-	}
-	
 	public void setCliente(Cliente cliente) {
 		id.setCliente(cliente);
+	}
+	
+	public void setExemplar(Exemplar exemplar) {
+		id.setExemplar(exemplar);
 	}
 
 	public EmprestimoPK getId() {
@@ -33,12 +36,20 @@ public class Emprestimo {
 		this.id = id;
 	}
 
-	public LocalDate getData_dev() {
-		return data_dev;
+	public LocalDate getDataEmprestimo() {
+		return dataEmprestimo;
 	}
 
-	public void setData_dev(LocalDate data_dev) {
-		this.data_dev = data_dev;
+	public void setDataEmprestimo(LocalDate dataEmprestimo) {
+		this.dataEmprestimo = dataEmprestimo;
 	}
 
+	public LocalDate getDataDevolucao() {
+		return dataDevolucao;
+	}
+
+	public void setDataDevolucao(LocalDate dataDevolucao) {
+		this.dataDevolucao = dataDevolucao;
+	}
+	
 }
