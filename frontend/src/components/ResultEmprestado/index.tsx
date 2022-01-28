@@ -1,13 +1,15 @@
-import LivroEmprestado from "../LivroEmprestado";
+import LivroEmprestado from "components/LivroEmprestado";
+import { Livro } from "types/livro";
 import "./styles.css"
 
+type Props = {
+    livro : Livro
+}
 
-function EmprestadoResult() {
+function EmprestadoResult({livro}:Props) {
     return (
         <div className="alexandria-emprestado-result-container">
-            <LivroEmprestado />
-            <LivroEmprestado />
-            <LivroEmprestado />
+           <LivroEmprestado livro={livro}/>
         </div>
     );
 }

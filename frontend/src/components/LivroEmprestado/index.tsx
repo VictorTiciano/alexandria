@@ -1,26 +1,36 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Livro } from "types/livro";
+import { BASE_URL } from "utils/request";
 import "./styles.css"
 
-function LivroEmprestado() {
+type Props = {
+    livro: Livro
+}
 
-    const livro = {
-        id: 1,
-        titulo: "Harry Potter e a Pedra Filosofal",
-        autor: "J.K. Rowling",
-        editora: "Editora Teste",
-        data_devolucao: "23/02/2022"
-    }
+function LivroEmprestado({livro}:Props) {
+
+    const [livro1, setLivro] = useState<Livro>();
+
+    useEffect(() => {
+        axios.get(`${BASE_URL}/livros/${livro.id}`)
+        .then(response => {
+            setLivro(response.data)
+        })
+    })
 
     return (
         <div className="alexandria-livro-emprestado-container">
             <div className="alexandria-livro-dados">
-                <p>{livro.titulo}, {livro.autor}, {livro.editora}
+                <p>{livro?.titulo}, {livro?.autor}, {livro?.editora}
                 </p>
             </div>
             <div className="alexandria-livro-emprestado-buttons">
                 <button className="btn btn-primary alexandria-btn">Renovar</button>
+                <button className="btn btn-primary alexandria-btn">Devolver</button>
                 <div className="alexandria-livro-emprestado-devolucao">
                     <p>Data de devolução</p>
-                    <p>{livro.data_devolucao}</p>
+                    <p>25/02/2022</p>
                 </div>
 
             </div>

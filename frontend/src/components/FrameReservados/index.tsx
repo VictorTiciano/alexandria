@@ -1,11 +1,16 @@
+import { Cliente } from "types/cliente";
+import { Livro } from "types/livro";
 import LivroReservado from "../LivroReservado";
-import ReservadoResult from "../ResultReservado";
 import "./styles.css"
 
-function FrameReservados(){
+type Props = {
+    livro : Livro
+}
+
+function FrameReservados({livro}:Props){
     return(
         <>
-        <LivroReservado/>
+        <LivroReservado livro={livro}/>
         </>
     );
 }
